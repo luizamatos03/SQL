@@ -1,2 +1,2 @@
 # SQL
- Exercícios de SQL no MySQL
+ Exercícios de SQL no MySQL.
