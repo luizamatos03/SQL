@@ -1,8 +1,8 @@
 /* 1. A equipe comercial da locadora está criando uma nova estratégia e pediu que você classificasse os filmes
 do catálogo de acordo com seu preço de aluguel. A regra para a classificação é:
-○ Aluguel menor ou igual a 0.99: Básico
-○ Aluguel entre 0.99 e 2.99: Essencial
-○ Aluguel maior que 2.99: Exclusivo
+       ○ Aluguel menor ou igual a 0.99: Básico
+       ○ Aluguel entre 0.99 e 2.99: Essencial
+       ○ Aluguel maior que 2.99: Exclusivo
 Escreva uma consulta SQL que, a partir da tabela film, retorne a lista classificada, contendo as colunas: id,
 nome do filme, preço de aluguel e classificação. */
 
@@ -18,7 +18,8 @@ SELECT title,
 /* 2. A tabela customer contém: dados das pessoas cadastradas na rede de locadoras, identificação da loja que
 a pessoa se cadastrou (a partir da coluna store_id) e também se o cadastro está ativo ou não (coluna active).
 Escreva uma consulta SQL que utilize o comando CASE WHEN e retorne a contagem de consumidores ativos e inativos 
-para cada uma das lojas. Dica: existem 4 possibilidades de resultados (lojas 1 e 2, e pessoa ativa ou inativa) */
+para cada uma das lojas. 
+Dica: existem 4 possibilidades de resultados (lojas 1 e 2, e pessoa ativa ou inativa) */
 SELECT 
        COUNT(CASE WHEN active = 0 AND store_id = 1 THEN "Inativos loja 1" ELSE NULL END) AS loja_01_inativos,
        COUNT(CASE WHEN active = 1 AND store_id = 1 THEN "Ativos loja 1" ELSE NULL END) AS loja_01_ativos,
