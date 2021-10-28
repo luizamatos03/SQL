@@ -1,27 +1,36 @@
 /* 1. Conte o número de registros nas tabelas seguintes. Além do número, escreva para cada item pelo menos 3
 consultas com formas diferentes de chegar a esse resultado:
 a. Customer */
-SELECT COUNT(customer_id) FROM sakila.customer;
+SELECT COUNT(customer_id) 
+  FROM sakila.customer;
 
-SELECT COUNT(email) FROM sakila.customer;
+SELECT COUNT(email) 
+  FROM sakila.customer;
 
-SELECT COUNT(DISTINCT address_id) FROM sakila.customer;
+SELECT COUNT(DISTINCT address_id) 
+  FROM sakila.customer;
 
 
 /* b. Film */
-SELECT COUNT(film_id) FROM sakila.film; 
+SELECT COUNT(film_id) 
+  FROM sakila.film; 
 
-SELECT COUNT(title) FROM sakila.film;
+SELECT COUNT(title) 
+  FROM sakila.film;
 
-SELECT COUNT(DISTINCT description) FROM sakila.film; 
+SELECT COUNT(DISTINCT description) 
+  FROM sakila.film; 
 
 
 /* c. Rental */
-SELECT COUNT(rental_id) FROM sakila.rental;
+SELECT COUNT(rental_id) 
+  FROM sakila.rental;
 
-SELECT COUNT(inventory_id) FROM sakila.rental;
+SELECT COUNT(inventory_id) 
+  FROM sakila.rental;
 
-SELECT COUNT(customer_id) FROM sakila.rental;
+SELECT COUNT(customer_id) 
+  FROM sakila.rental;
 
 /* 2. Qual foi o valor médio pago por aluguéis de filmes (tabela payment) no mês de junho de 2015? */
 SELECT AVG(amount) AS preco_medio 
@@ -36,9 +45,12 @@ SELECT COUNT(payment_date)
 /* 3. Em uma locadora, é comum haver um custo associado a cada filme para reposição, em caso de perda ou dano
 ao item. Qual é o maior custo de reposição (tabela film) no inventário atual? Descreva dois processos por meio
 dos quais você pode chegar a essa informação. */
-SELECT MAX(replacement_cost) FROM sakila.film;
+SELECT MAX(replacement_cost) 
+  FROM sakila.film;
 
-SELECT * FROM sakila.film ORDER BY replacement_cost DESC;
+SELECT * 
+  FROM sakila.film 
+ ORDER BY replacement_cost DESC;
 
 /* 4. Escreva uma consulta que, a partir da tabela film, retorne o seguinte resultado: */
 SELECT rental_duration AS duracao_aluguel, 
