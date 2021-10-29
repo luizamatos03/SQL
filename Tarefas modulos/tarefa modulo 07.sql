@@ -27,14 +27,14 @@ entre diversas tabelas para isso. Caso necessário, revise o módulo 5 - Funçõ
         email,
         city.city AS cidade_loja,
         count(rental_id) AS total_aluguel
-   FROM sakila.customer
-  INNER JOIN sakila.rental 
+   FROM customer
+  INNER JOIN rental 
      ON rental.customer_id = customer.customer_id
-  INNER JOIN sakila.store 
+  INNER JOIN store 
      ON customer.store_id = store.store_id
-  INNER JOIN sakila.address 
+  INNER JOIN address 
      ON store.address_id = address.address_id
-  INNER JOIN sakila.city 
+  INNER JOIN city 
      ON address.city_id = city.city_id
   GROUP BY customer.first_name
  HAVING count(rental_id) >= 40
@@ -54,17 +54,17 @@ SELECT count(inventory.store_id) AS exemplares,
        rating, 
        length
   FROM sakila.inventory
- INNER JOIN sakila.film 
+ INNER JOIN film 
     ON inventory.film_id = film.film_id
- INNER JOIN sakila.film_category 
+ INNER JOIN film_category 
     ON film_category.film_id = film.film_id
- INNER JOIN sakila.category 
+ INNER JOIN category 
     ON category.category_id = film_category.category_id
- INNER JOIN sakila.store 
+ INNER JOIN store 
     ON store.store_id = inventory.store_id
- INNER JOIN sakila.address 
+ INNER JOIN address 
     ON address.address_id = store.address_id
- INNER JOIN sakila.city 
+ INNER JOIN city 
     ON city.city_id = address.city_id
  GROUP BY description, inventory.store_id
  ORDER BY inventory_id; 
@@ -74,7 +74,7 @@ coluna return_date é nula). Qual é o valor total pago por esses aluguéis? */
 
 SELECT count(rental_date) AS nao_devolvidos, 
        SUM(amount) AS totalpago
-  FROM sakila.rental
- INNER JOIN sakila.payment 
+  FROM rental 
+ INNER JOIN payment 
     ON payment.rental_id = rental.rental_id
  WHERE return_date IS NULL;
