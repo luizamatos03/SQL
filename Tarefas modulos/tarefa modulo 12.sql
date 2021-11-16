@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS cad_alunos(
   cep INT (8) ZEROFILL,
   email VARCHAR (100) NOT NULL,
   PRIMARY KEY (id)
-) DEFAULT CHARSET utf8;
+)DEFAULT CHARSET utf8;
 
 
 /* Criação de tabela com os professores e os cursos ministrados */
